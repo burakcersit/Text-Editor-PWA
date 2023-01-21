@@ -3,7 +3,7 @@
 ## Description
 
 
-🚀The application has been deployed to [Heroku](https://text-editor-pwa-brk.herokuapp.com/)
+🚀The application has been deployed to [Heroku](https://serene-springs-99158.herokuapp.com/)
 
 
 ## Table of Contents
