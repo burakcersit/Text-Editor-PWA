@@ -9,7 +9,7 @@ const { InjectManifest } = require('workbox-webpack-plugin');
 module.exports = () => {
   return {
     mode: 'development',
-    entry: {
+    entry: {//entries
       main: './src/js/index.js',
       install: './src/js/install.js',
       header: './src/js/header.js',
@@ -17,15 +17,15 @@ module.exports = () => {
       editor: './src/js/editor.js',
     },
     output: {
-      filename: '[name].bundle.js',
+      filename: '[name].bundle.js', //filename and path
       path: path.resolve(__dirname, 'dist'),
     },
     plugins: [
-      new HtmlWebpackPlugin({
+      new HtmlWebpackPlugin({ //plugin
 				template: './index.html',
         title: "jate- text editor"
 			}),
-      new InjectManifest({
+      new InjectManifest({//manifest
 				swSrc: './src-sw.js',
 				swDest: 'service-worker.js',
 			}),

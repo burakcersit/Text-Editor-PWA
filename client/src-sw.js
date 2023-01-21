@@ -19,7 +19,7 @@ const pageCache = new CacheFirst({
   ],
 });
 
-warmStrategyCache({
+warmStrategyCache({// url path
   urls: ['/index.html', '/'],
   strategy: pageCache,
 });
@@ -27,17 +27,17 @@ warmStrategyCache({
 registerRoute(({ request }) => request.mode === 'navigate', pageCache);
 
 // TODO: Implementing asset caching
-registerRoute(
+registerRoute(//call back request function
   ({ request }) => request.destination === 'image', //callback function
 	new CacheFirst({
 		cacheName: 'assets', //storage name is here
 		plugins: [ //response with these headers to a maximum-age of 30 days
 			new CacheableResponsePlugin({
-				statuses: [0, 200],
+				statuses: [0, 200],// status
 			}),
 			new ExpirationPlugin({
-				maxEntries: 60,
-				maxAgeSeconds: 30 * 24 * 60 * 60,
+				maxEntries: 60,// entries for max
+				maxAgeSeconds: 30 * 24 * 60 * 60,//entries for sec
 			}),
 		],
 	})
